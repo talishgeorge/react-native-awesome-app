@@ -1,7 +1,16 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import {
+  SafeAreaView,
+  Text,
+  Touchable,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 // import {getFontFamily} from './assets/fonts/helper';
 import Title from './components/Title/Title';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faEnvelope as favenvelope} from '@fortawesome/free-solid-svg-icons';
+import globalStyle from './assets/styles/globalStyle';
 
 function App(): JSX.Element {
   // console.log('App function is running');
@@ -25,10 +34,17 @@ function App(): JSX.Element {
   // const weight = 600;
   return (
     <SafeAreaView>
-      {/* <Text style={{fontSize: 50, fontFamily: getFontFamily(baseFont, weight)}}>
-        Hello World
-      </Text> */}
-      <Title title="Lets Explore" />
+      <View style={globalStyle.header}>
+        <Title title="Lets Explore" />
+        <TouchableOpacity style={globalStyle.messageIcon}>
+          <FontAwesomeIcon
+            icon={favenvelope}
+            color={'#898dAE'}></FontAwesomeIcon>
+          <View style={globalStyle.mesasgeNumberContainer}>
+            <Text style={globalStyle.mesasgeNumber}>2</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }

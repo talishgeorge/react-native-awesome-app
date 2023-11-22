@@ -3,7 +3,7 @@ import {getFontFamily} from '../../assets/fonts/helper';
 
 const style = StyleSheet.create({
   title: {
-    color: '022150',
+    color: '#022150',
     fontFamily: getFontFamily('Inter', 600),
     fontSize: 24,
   },

@@ -12,12 +12,6 @@ const style = StyleSheet.create({
     marginTop: 8,
     textAlign: 'center',
   },
-  userImageContainer: {
-    borderColor: '#F35BAC',
-    borderWidth: 1,
-    padding: 3,
-    borderRadius: 50,
-  },
 });
 
 export default style;

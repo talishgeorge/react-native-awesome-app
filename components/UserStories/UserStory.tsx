@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text} from 'react-native';
 import style from './style.js';
+import UserProfileImage from '../UserProfileImage/UserProfileImage';
 
 interface UserStoriesProps {
   firstName: string;
@@ -9,9 +10,7 @@ interface UserStoriesProps {
 const UserStory: React.FC<UserStoriesProps> = ({firstName, profileImage}) => {
   return (
     <View style={style.storyContainer}>
-      <View style={style.userImageContainer}>
-        <Image source={profileImage} />
-      </View>
+      <UserProfileImage profileImage={profileImage} imageDimension={65} />
       <Text style={style.firstName}>{firstName}</Text>
     </View>
   );

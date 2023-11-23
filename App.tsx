@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  FlatList,
   SafeAreaView,
   Text,
   Touchable,
@@ -11,6 +12,7 @@ import Title from './components/Title/Title';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faEnvelope as favenvelope} from '@fortawesome/free-solid-svg-icons';
 import globalStyle from './assets/styles/globalStyle';
+import UserStory from './components/UserStories/UserStory';
 
 function App(): JSX.Element {
   // console.log('App function is running');
@@ -32,6 +34,54 @@ function App(): JSX.Element {
   // }
   // const baseFont = 'Inter';
   // const weight = 600;
+  const userStories = [
+    {
+      firstName: 'John',
+      id: 1,
+      profileImage: require('./assets/images/default_profile.png'),
+    },
+    {
+      firstName: 'Angel',
+      id: 2,
+      profileImage: require('./assets/images/default_profile.png'),
+    },
+    {
+      firstName: 'White',
+      id: 3,
+      profileImage: require('./assets/images/default_profile.png'),
+    },
+    {
+      firstName: 'Oliver',
+      id: 4,
+      profileImage: require('./assets/images/default_profile.png'),
+    },
+    {
+      firstName: 'Talish',
+      id: 5,
+      profileImage: require('./assets/images/default_profile.png'),
+    },
+    {
+      firstName: 'Nina',
+      id: 6,
+      profileImage: require('./assets/images/default_profile.png'),
+    },
+    {
+      firstName: 'Nana',
+      id: 7,
+      profileImage: require('./assets/images/default_profile.png'),
+    },
+    {
+      firstName: 'George',
+      id: 8,
+      profileImage: require('./assets/images/default_profile.png'),
+    },
+    {
+      firstName: 'Adam',
+      id: 9,
+      profileImage: require('./assets/images/default_profile.png'),
+    },
+  ];
+
   return (
     <SafeAreaView>
       <View style={globalStyle.header}>
@@ -44,6 +94,19 @@ function App(): JSX.Element {
             <Text style={globalStyle.mesasgeNumber}>2</Text>
           </View>
         </TouchableOpacity>
+      </View>
+      <View style={globalStyle.userStoriesContainer}>
+        <FlatList
+          showsHorizontalScrollIndicator={false}
+          horizontal={true}
+          data={userStories}
+          renderItem={({item}) => (
+            <UserStory
+              firstName={item.firstName}
+              profileImage={item.profileImage}
+            />
+          )}
+        />
       </View>
     </SafeAreaView>
   );
